@@ -1,14 +1,59 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jogo 2D no Canvas</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nave Infinita - Trabalho de Faculdade</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="game" width="960" height="540"></canvas>
+  <main>
+    <header>
+      <h1>Nave Infinita ✦</h1>
+      <p class="hint">Use ← → ↑ ↓ ou WASD para mover. Espaço para atirar. Uma batida significa game over.</p>
+    </header>
+
+    <section id="menu">
+      <label for="playerName">Seu nome:</label>
+      <input id="playerName" type="text" placeholder="Digite seu nome (ex: Mateus)" maxlength="20" />
+      <button id="btnStart">Começar Jogo</button>
+
+      <div id="bestScores">
+        <h3>Ranking (local)</h3>
+        <ol id="rankingList"></ol>
+        <button id="btnClearRanking">Limpar ranking</button>
+      </div>
+    </section>
+
+    <section id="gamewrap" class="hidden">
+      <canvas id="gameCanvas" width="480" height="720"></canvas>
+      <div id="hud">
+        <div id="hud-left">
+          <div id="nameDisplay"></div>
+        </div>
+        <div id="hud-center">
+          <div id="distance">Distância: 0 m</div>
+          <div id="speed">Velocidade: 0</div>
+        </div>
+        <div id="hud-right">
+          <div id="lives">Vida: 1</div>
+          <div id="score">Inimigos: 0</div>
+        </div>
+      </div>
+      <div id="overlay" class="hidden">
+        <div id="gameOverBox">
+          <h2>Game Over</h2>
+          <p id="finalDistance">Distância: 0 m</p>
+          <button id="btnBackToMenu">Voltar ao menu</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>Desenvolvido por: Mateus & Isabella — Projeto Faculdade. IA ajudou com geração do código.</small>
+    </footer>
+  </main>
+
   <script src="main.js"></script>
 </body>
 </html>
